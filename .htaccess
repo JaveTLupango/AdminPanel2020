@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteRule ^home/([a-z0-9]+) validate.php?data=$1
+RewriteRule ^home validate.php?data=home
+RewriteRule ^logout logout.php
+
+
+RewriteRule ^registerclass/([a-z0-9]+)/([a-z0-9]+) class/register.class.php?id=$1&&data=$2
