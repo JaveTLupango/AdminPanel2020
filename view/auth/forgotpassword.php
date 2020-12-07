@@ -4,7 +4,7 @@
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
-      <form action="recover-password.html" method="post">
+      <form action="" method="post">
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
