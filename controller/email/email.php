@@ -25,67 +25,303 @@ try {
         'verify_peer_name' => false,
         'allow_self_signed' => true
     ));
-
     //Recipients
-
     $mail->setFrom('info@vpnproviderph.site', 'vpnproviderph');
     $mail->addAddress('lupangojave@gmail.com', 'Jave Lupango'); 
-
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Test Only';
     $mail->Body    = '
 
-            <center>
-                <tbody>
-                <tr height="32" style="height:32px">
-                    <td>
-                        
-                    </td>
-                </tr>
-                <tr align="center">
-                    <td>
-                        <div>
-                            <div>
-                                
-                            </div>
-                        </div>
-                        <table border="0" cellspacing="0" cellpadding="0" style="padding-bottom:20px;max-width:516px;min-width:220px">
-                            <tbody>
-                                <tr>
-                                    <td width="8" style="width:8px">                            
-                                    </td>
-                                    <td>
-                                        <div style="border-style:solid;border-width:thin;border-color:#dadce0;border-radius:8px;padding:40px 20px" align="center" class="">
-                                            <img width="75" height="24" src="../picture/dafault/logo.jpg" style="width:200px;height:130px;margin-bottom:-10px" class="CToWUd">
-                                            <div style="font-family:,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;border-bottom:thin solid #dadce0;color:rgba(0,0,0,0.87);line-height:32px;padding-bottom:24px;text-align:center;word-break:break-word">
-                                             <div style="font-size:30px">
-                                                CHBC Ministry
-                                            </div>
-                                         
-                                            </div>
-                                            <div style="font-family:Roboto-Regular,Helvetica,Arial,sans-serif;font-size:14px;color:rgba(0,0,0,0.87);line-height:20px;padding-top:20px;text-align:center">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" class="m_-5350758594985752526mlContentTable" width="860">
+    <tbody>
+        <tr>
+            <td>
+                <table align="center" border="0" bgcolor="#673DE6" class="m_-5350758594985752526mlContentTable" cellpadding="0" cellspacing="0" width="860">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table align="center" bgcolor="#673DE6" border="0" cellpadding="0" cellspacing="0" class="m_-5350758594985752526mlContentTable" style="width:860px;min-width:860px" width="860">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="100%" style="border-top:11px solid #673de6;border-collapse:initial">
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table align="center" border="0" bgcolor="#ffffff" class="m_-5350758594985752526mlContentTable" cellpadding="0" cellspacing="0" width="860">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="m_-5350758594985752526mlContentTable" style="width:860px;min-width:860px" width="860">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="21" class="m_-5350758594985752526spacingHeight-30" style="line-height:30px;min-height:30px"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="center" style="padding:0px 120px" class="m_-5350758594985752526mlContentOuter">
+                                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td align="left">
+                                                                               <h1>Admin Panel</h1>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="20" class="m_-5350758594985752526spacingHeight-20" style="line-height:20px;min-height:20px"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table align="center" border="0" bgcolor="#ffffff" class="m_-5350758594985752526mlContentTable" cellpadding="0" cellspacing="0" width="860">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="m_-5350758594985752526mlContentTable" style="width:860px;min-width:860px" width="860">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="center" class="m_-5350758594985752526mlContentOuter">
+                                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="620" style="border-top:1px solid #dadce0;border-collapse:initial" class="m_-5350758594985752526mlContentTable">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td height="20" style="line-height:10px;min-height:10px">
+                                                                                <img src="https://ci5.googleusercontent.com/proxy/BFWENKPKa5rpWxb3WQg_EEMZRszPGOVy6hOHfJdaNDMvFPJ8ffo214JW3x7hc2jEE5bJdbbYuXhLlT7UZhRiLw=s0-d-e1-ft#https://cdn.hostinger.com/mailer/spacerv2.gif" width="1" height="1" border="0" alt="" style="display:block"
+                                                                                    class="CToWUd">
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table align="center" border="0" bgcolor="#ffffff" class="m_-5350758594985752526mlContentTable" cellpadding="0" cellspacing="0" width="860">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="m_-5350758594985752526mlContentTable" style="width:860px;min-width:860px" width="860">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="10" style="line-height:10px;min-height:10px"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="center" style="padding:0px 120px" class="m_-5350758594985752526mlContentOuter">
+                                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td id="m_-5350758594985752526bodyText-10" style="font-family:Helvetica,sans-serif;font-size:14px;line-height:24px;color:#727586">
+                                                                                <p style="margin-top:0px;margin-bottom:0px;line-height:32px;font-weight:400px;font-size:16px"><span class="im">Hello Pangga,<br><br>You’re almost there! You have now enabled Two-Factor Authentication for your account and your login code is:<br>
+<br></span><b>438220</b><span class="im"><br><br>The code will expire in 15 minutes.<br>
+<br>Having trouble to log into your account? Just hit reply and let us know.</span></p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="17" class="m_-5350758594985752526spacingHeight-20" style="line-height:20px;min-height:20px"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><span class="im">
+                      <table align="center" border="0" bgcolor="#ffffff" class="m_-5350758594985752526mlContentTable" cellpadding="0" cellspacing="0" width="860">
+                        <tbody><tr>
+                          <td>
+                            <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="m_-5350758594985752526mlContentTable" style="width:860px;min-width:860px" width="860">
+                              <tbody><tr>
+                                <td>
+                                  <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                    <tbody><tr>
+                                      <td height="20" class="m_-5350758594985752526spacingHeight-20" style="line-height:20px;min-height:20px"></td>
+                                    </tr>
+                                  </tbody></table>
+                                  <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                    <tbody><tr>
+                                      <td align="center" class="m_-5350758594985752526mlContentOuter">
+                                        <table cellpadding="0" cellspacing="0" border="0" align="center" width="620" style="border-top:1px solid #dadce0;border-collapse:initial" class="m_-5350758594985752526mlContentTable">
+                                          <tbody><tr>
+                                            <td height="10" style="line-height:10px;min-height:10px">
+                                              <img src="https://ci5.googleusercontent.com/proxy/BFWENKPKa5rpWxb3WQg_EEMZRszPGOVy6hOHfJdaNDMvFPJ8ffo214JW3x7hc2jEE5bJdbbYuXhLlT7UZhRiLw=s0-d-e1-ft#https://cdn.hostinger.com/mailer/spacerv2.gif" width="1" height="1" border="0" alt="" style="display:block" class="CToWUd">
+                                            </td>
+                                          </tr>
+                                        </tbody></table>
+                                      </td>
+                                    </tr>
+                                  </tbody></table>
+                                </td>
+                              </tr>
+                            </tbody></table>
+                          </td>
+                        </tr>
+                      </tbody></table>
+					<table align="center" border="0" bgcolor="#ffffff" class="m_-5350758594985752526mlContentTable" cellpadding="0" cellspacing="0" width="860">
+						<tbody><tr>
+							<td>
+								<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="m_-5350758594985752526mlContentTable" style="width:860px;min-width:860px" width="860">
+									<tbody><tr>
+										<td>
+											<table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+												<tbody><tr>
+													<td height="10" style="line-height:10px;min-height:10px"></td>
+												</tr>
+											</tbody></table>
+											<table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+												<tbody><tr>
+													<td align="center" style="padding:0px 120px" class="m_-5350758594985752526mlContentOuter">
+														<table cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+															<tbody><tr>
+																<td id="m_-5350758594985752526bodyText-16" style="font-family:Helvetica,sans-serif;font-size:14px;line-height:13px;color:#6f6f6f">
+                                                                    <p style="margin-top:0px;margin-bottom:0px;line-height:24px"><span style="color:rgb(114,117,134)">
+                                                                    <a href="https://www.facebook.com/javelupango/" style="word-break:break-word;font-family:Helvetica,sans-serif;color:#727586;font-weight:400px;text-decoration:underline" target="_blank" data-saferedirecturl="">Facebook</a>&nbsp;·&nbsp;
+                                                                    <a href="https://www.instagram.com/iamjave12/?fbclid=IwAR3ed5UuAHJXJljHWreZL_JwuCU2vtzJ_f8xB95baMSltRj3Yv1RuM1PfSA" style="word-break:break-word;font-family:Helvetica,sans-serif;color:#727586;font-weight:400px;text-decoration:underline" target="_blank" data-saferedirecturl="">Instagram</a>&nbsp;·&nbsp;
+                                                                    <a href="https://javelupango.com/?fbclid=IwAR2I5K6yQ3sxT7LND-5sNLVZRt1hvE8KTP6KbmzBGTsjoaT5KeYa7PuB18s" style="word-break:break-word;font-family:Helvetica,sans-serif;color:#727586;font-weight:400px;text-decoration:underline" target="_blank" data-saferedirecturl="">Website</a></span>·&nbsp;
+                                                                    <a href="https://codelife.javelupango.com/?fbclid=IwAR0b04SDmxaLEZBPEIW85FQVLn1rY9iZ0J2RcR2iipAQbd1WxzxjMVGtv5A" style="word-break:break-word;font-family:Helvetica,sans-serif;color:#727586;font-weight:400px;text-decoration:underline" target="_blank" data-saferedirecturl="">CodeLife</a></span>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+    <tbody>
+        <tr>
+            <td height="15" class="m_-5350758594985752526spacingHeight-20" style="line-height:15px;min-height:15px"></td>
+        </tr>
+    </tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
 
-                                            Thank You Jave Lupango For Sending Us email. <br> We Appreciate Your effort And We Do Our Best To Response Youre Concern Immediately. <br> Thank You And GOD BLESS..
 
-                                                <div style="padding-top:32px;text-align:center">
-
-                                                    <a href="http://www.chbc-ministry.cf/" style="padding: 15px 25px;font-size: 24px;text-align: center;cursor: pointer;outline: none;color: #fff;background-color: #4CAF50;border: none; border-radius: 15px;box-shadow: 0 9px #999;" type="button" class="btn button">Visit Our WebSite</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>                       
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr height="32" style="height:32px">
-                    <td>
-                        <center>NOTE: Donot Reply; This Message is System Generated!...</center> 
-                    </td>
-                </tr>
-            </tbody></center>
+<table align="center" border="0" bgcolor="#ffffff" class="m_-5350758594985752526mlContentTable" cellpadding="0" cellspacing="0" width="860">
+    <tbody>
+        <tr>
+            <td>
+                <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="m_-5350758594985752526mlContentTable" style="width:860px;min-width:860px" width="860">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                    <tbody>
+                                        <tr>
+                                            <td align="center" style="padding:0px 120px" class="m_-5350758594985752526mlContentOuter">
+                                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td id="m_-5350758594985752526bodyText-18" style="font-family:Helvetica,sans-serif;font-size:14px;line-height:24px;color:#727586">
+                                                                <p style="margin-top:0px;margin-bottom:0px;line-height:24px"><span style="font-size:14px"><span style="font-size:14px">
+                                                                <span style="font-size:14px">
+                                                                <span style="color:#727586">© 2020 Jave.</span>
+                                                            </span>
+                                                                    </span>
+                                                                    </span>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="860" style="width:860px;min-width:860px" class="m_-5350758594985752526mlContentTable">
+                                    <tbody>
+                                        <tr>
+                                            <td height="35" class="m_-5350758594985752526spacingHeight-20" style="line-height:20px;min-height:20px"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
 
     ' ;
 
