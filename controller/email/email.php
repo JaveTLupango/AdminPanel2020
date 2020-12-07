@@ -290,7 +290,7 @@ try {
                                                                 <p style="margin-top:0px;margin-bottom:0px;line-height:24px"><span style="font-size:14px"><span style="font-size:14px">
                                                                 <span style="font-size:14px">
                                                                 <span style="color:#727586">© 2020 Jave.</span><br><br>
-                                                                <span style="color:#727586">© 2020 Jave.</span>
+                                                                <span style="color:#727586"> <b> NOTE: Do not Reply, This email is System Generated. Thank you and Godbless.. :) </b></span>
                                                             </span>
                                                                     </span>
                                                                     </span>

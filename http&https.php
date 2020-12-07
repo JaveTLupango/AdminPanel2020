@@ -10,62 +10,18 @@
     // Append the requested resource location to the URL   
     //$url.= $_SERVER['REQUEST_URI'];    
       
-    echo $url. '<br>';
-   require 'controller/SelectController.php';
-   require 'controller/FuncController.php';
-include 'configuration/connection.php'; //connection
-  $c_Func = new Func_Controller();
-   $c_con = new ClassConnection(); 
-   $conn = $c_con->f_connection();
-   $c_select = new Select_Controller();
-   $s_res = $c_select->fn_SelectAll($conn, "SELECT * FROM users WHERE status = 'active'");
-   //echo $s_res;=
-    echo "<br>";
-    echo "<br>";
-  while ($row = $s_res->fetch()) {
-    echo $row['id']."<br />";
-}
+    echo $url. "<br>";
+    echo explode("//", $url)[1] . '<br>';
 
-   $s_res2 = $c_select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "userid", '0');
+    
+require 'controller/EmailController.php'; // Function Controller
+$c_email = new Email_Controller(); // Delete controller declarati0n
 
-echo $s_res2. "<br>";
+$content1 = "You’re almost there! You have now enabled Two-Factor Authentication for your account and your login code is:";
+$content2 = "The code will expire in 15 minutes.";
+$content3 = "Having trouble to log into your account? Just hit reply and let us know.";
 
-
-$a= array();
-
-for($x = 1; $x <= 10; $x++) 
-{
-  $b = array($x,$x);
-  array_push($a,$b);
-
-}  
-
- print_r($a). "<br>";
-
- for ($row = 0; $row <= 9; $row++)
- {
-  echo $a[$row][0]. " ==== " . $a[$row][1]. "<br>";
- }
-
- //header("Location: /home");
-
-
-  $charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  $base = strlen($charset);
-  $result = '';
-
-  $now = explode(' ', microtime())[1];
-  while ($now >= $base){
-    $i = $now % $base;
-    $result = $charset[$i] . $result;
-    $now /= $base;
-  }
-  echo substr($result, -10)."<br>";
-
-
-echo "<br>";  
-echo "<br>";  
-
-   $s_res = $c_select->fn_SelectAll_RetJSON($conn, "SELECT * FROM users");
-
-   echo $s_res;
+$EmailContent = $c_email->email_Content_Func("Admin Panel", "user101", "02514", $content1, $content2, $content3);
+$c_email->sendEmailForgotPassword("lupangojave@gmail.com", $EmailContent, "user101", explode("//", $url)[1]);
+echo "<br>";
+echo $EmailContent;
