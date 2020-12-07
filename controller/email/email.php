@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require 'PHPMailer/vendor/autoload.php';
 
-$mail = new PHPMailer(true);            // Passing `true` enables exceptions
+$mail = new PHPMailer(true); // Passing `true` enables exceptions
 try {
     //Server settings
     //$mail->SMTPDebug = 3;                                 // Enable verbose debug output
@@ -26,11 +26,11 @@ try {
         'allow_self_signed' => true
     ));
     //Recipients
-    $mail->setFrom('info@vpnproviderph.site', 'vpnproviderph');
-    $mail->addAddress('lupangojave@gmail.com', 'Jave Lupango'); 
+    $mail->setFrom('info@vpnproviderph.site', 'VPN Provider.PH Support');
+    $mail->addAddress('lupangojave@gmail.com', 'Jave Lupango');
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Test Only';
+    $mail->Subject = 'VPN Support Team';
     $mail->Body    = '
 
     <table align="center" border="0" cellpadding="0" cellspacing="0" class="m_-5350758594985752526mlContentTable" width="860">
@@ -289,6 +289,7 @@ try {
                                                             <td id="m_-5350758594985752526bodyText-18" style="font-family:Helvetica,sans-serif;font-size:14px;line-height:24px;color:#727586">
                                                                 <p style="margin-top:0px;margin-bottom:0px;line-height:24px"><span style="font-size:14px"><span style="font-size:14px">
                                                                 <span style="font-size:14px">
+                                                                <span style="color:#727586">© 2020 Jave.</span><br><br>
                                                                 <span style="color:#727586">© 2020 Jave.</span>
                                                             </span>
                                                                     </span>
@@ -322,15 +323,10 @@ try {
 </tr>
 </tbody>
 </table>
-
     ' ;
-
-    $mail->send();                   
-                    
+    $mail->send(); 
     echo 'Message has been sent';
-
 } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
-
 ?>
