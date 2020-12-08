@@ -22,6 +22,6 @@ $content2 = "The code will expire in 15 minutes.";
 $content3 = "Having trouble to log into your account? Just hit reply and let us know.";
 
 $EmailContent = $c_email->email_Content_Func("Admin Panel", "user101", "02514", $content1, $content2, $content3);
-$c_email->sendEmailForgotPassword("lupangojave@gmail.com", $EmailContent, "user101", explode("//", $url)[1]);
+$c_email->sendEmailForgotPassword("lupangojave@gmail.com", $EmailContent, "user101", "Reset Password");
 echo "<br>";
 echo $EmailContent;

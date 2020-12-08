@@ -10,7 +10,7 @@ require 'email/PHPMailer/vendor/autoload.php';
 
 class  Email_Controller
 {
-    function sendEmailForgotPassword($userEmail, $BodyContent, $tousername, $url)
+    function sendEmailForgotPassword($userEmail, $BodyContent, $tousername, $subject)
     {
         try
         {
@@ -32,14 +32,14 @@ class  Email_Controller
                 'allow_self_signed' => true
             ));
             //Recipients
-            $mail->setFrom($system_Email, $url.' Support');
+            $mail->setFrom($system_Email, 'Support Team');
             $mail->addAddress($userEmail, $tousername);
             //Content
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'VPN Support Team';
+            $mail->Subject = $subject;
             $mail->Body = $BodyContent;
             $mail->send(); 
-            echo 'send';
+            return 'send';
         }
 		catch (Exception $e)
 		{			
@@ -190,7 +190,7 @@ class  Email_Controller
                                                                                 <td id="m_-5350758594985752526bodyText-10" style="font-family:Helvetica,sans-serif;font-size:14px;line-height:24px;color:#727586">
                                                                         <p style="margin-top:0px;margin-bottom:0px;line-height:32px;font-weight:400px;font-size:16px"><span class="im">Hello '. $tousername .',<br><br>
                                                                         '. $content1.'<br>
-                                                                        <br></span><b>'.$codegenerated.'</b><span class="im"><br>
+                                                                        <br></span><b><h1 style="font-size: 100px;">'.$codegenerated.'</h1></b><span class="im"><br>
                                                                         <br>'.$content2.'<br>
                                                                         <br>'.$content3.'</span></p>
                                                                                 </td>

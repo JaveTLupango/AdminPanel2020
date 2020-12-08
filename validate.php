@@ -6,12 +6,14 @@ include 'controller/InsertController.php'; // insertion Controller
 include 'controller/AuthController.php'; // Auth Controller
 require 'controller/SelectController.php'; // Select Controller
 require 'controller/FuncController.php'; // Function Controller
+require 'controller/EmailController.php'; // Function Controller
 
 $c_con = new ClassConnection(); // connection declaration
 $c_InsertControl = new Insert_Controller(); // Insertion controller declaration
 $c_Auth = new Auth_Controller(); // Auth controller Decleration
 $c_Select = new Select_Controller(); // Select controller declaration
 $c_Func = new Func_Controller(); // Select controller declaration
+$c_email = new Email_Controller(); // Delete controller declarati0n
 $logsURL = "local";
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
          $url = "https://";   
