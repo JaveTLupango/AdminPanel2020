@@ -44,7 +44,7 @@
                 else
                 {
                   echo '<center><p style="color: red;"> Failed Sending Email Request! </p></center>';
-                }               
+                }
               }
             }
         ?>

@@ -37,7 +37,7 @@ else
 			$passhash = md5($password);
 			$id = $_POST['data5'];
 			$usertype = $_POST['data6'];
-			echo $c_Del->UpdateRecode($conn, "UPDATE users SET name='$name', email='$email', username='$username', password='$passhash', passkey='$password', usertype='$usertype' WHERE id = '$id'");			
+			echo $c_Del->deleteRecord($conn, "UPDATE users SET name='$name', email='$email', username='$username', password='$passhash', passkey='$password', usertype='$usertype' WHERE id = '$id'");			
 		} 
 		else if ($id == "ReloadVoucher")
 		{
