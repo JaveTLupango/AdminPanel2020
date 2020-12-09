@@ -18,15 +18,14 @@
             <input type="submit" class="btn btn-primary btn-block" name="newPass" value="Request new password">
           </div>
           <!-- /.col -->
-        </div>
-        
+        </div>        
         <?php
             if(isset($_POST["newPass"]))
             {
               $resEmail = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE email=?", "email", $_POST["email"]);
               if($resEmail == "" || $resEmail == null)
               {
-                echo '<center><p style="color: red;">Email is not Found! </p></center>';
+                echo '<center><p style="color: red;">Email not Found! </p></center>';
               }
               else
               {
@@ -36,7 +35,7 @@
                 $content2 = "Do not share this email to others.";
                 $content3 = "Having trouble to log into your account? Just relay to your upline.";
                 $EmailContent = $c_email->email_Content_Func("Admin Panel", $resname, $resPass, $content1, $content2, $content3);
-                $resEmail = $c_email->sendEmailForgotPassword("lupangojave@gmail.com", $EmailContent, "user101", "Reset Password");  
+                $resEmail = $c_email->sendEmailForgotPassword($resEmail, $EmailContent, "user101", "Reset Password");  
                 if ($resEmail == "send")
                 {
                   echo '<center><p style="color: blue;">Email Request Send! </p></center>';
