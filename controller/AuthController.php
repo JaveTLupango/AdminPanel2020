@@ -61,8 +61,8 @@ class Auth_Controller
 		{  			
 			$now = new DateTime();
 			$dttime = $now->format('Y-m-d H:i:s');
-			$sql = "INSERT INTO 2authfactor (userid, status, code, dt)
-						   VALUES ('$username', 'active', '$code', '$dttime')";
+			$sql = "INSERT INTO 2authfactor (userid, status, code, dt, duration)
+						   VALUES ('$username', 'active', '$code', '$dttime', '900')";
 								$conn->exec($sql);
 			return "success";
 		}

@@ -35,7 +35,7 @@
                 $content2 = "Do not share this email to others.";
                 $content3 = "Having trouble to log into your account? Just relay to your upline.";
                 $EmailContent = $c_email->email_Content_Func("Admin Panel", $resname, $resPass, $content1, $content2, $content3);
-                $resEmail = $c_email->sendEmailForgotPassword($resEmail, $EmailContent, "user101", "Reset Password");  
+                $resEmail = $c_email->sendEmailForgotPassword($resEmail, $EmailContent, $resname, "Reset Password");  
                 if ($resEmail == "send")
                 {
                   echo '<center><p style="color: blue;">Email Request Send! </p></center>';

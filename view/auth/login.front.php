@@ -25,7 +25,13 @@
               {
                 $c_Auth->insert_2authfactorlogs($conn, md5($login_username), $login_username);
                 $genCode = $c_Func->GenerateUsername("CODE");
-                $c_Auth->insert_2authfactor_func($conn, md5($login_username), $genCode);
+                $c_Auth->insert_2authfactor_func($conn, md5($login_username), $genCode);                
+                $g_email = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "email", $login_username);                
+                $content1 = "You’re almost there! You have now enabled Two-Factor Authentication for your account and your login code is:";
+                $content2 = "The code will expire in 15 minutes.";
+                $content3 = "Having trouble to log into your account? Just relay to your upline.";
+                $EmailContent = $c_email->email_Content_Func("Admin Panel", $login_username, $genCode, $content1, $content2, $content3);
+                $resEmail = $c_email->sendEmailForgotPassword($g_email, $EmailContent, $login_username, "Two Factor Authentication");                
                 header("Location: ".$url."/home/twoauthfactor/".md5($login_username));
               }
             }
