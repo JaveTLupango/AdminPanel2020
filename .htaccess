@@ -1,5 +1,6 @@
 RewriteEngine On
 
+RewriteRule ^home/([a-z0-9]+)/([a-z0-9]+) validate.php?data=$1&&data2=$2
 RewriteRule ^home/([a-z0-9]+) validate.php?data=$1
 RewriteRule ^home validate.php?data=home
 RewriteRule ^logout logout.php

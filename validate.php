@@ -36,7 +36,8 @@ else
             if (strtoupper($data) == "LOGIN" || 
                 strtoupper($data) == "REGISTER" ||
                 strtoupper($data) == "FORGOTPASS" || 
-                strtoupper($data) == "LOGOUT")
+                strtoupper($data) == "LOGOUT" || 
+                strtoupper($data) == "TWOAUTHFACTOR")
             {
                         echo '<!DOCTYPE html>
                         <html class="no-js">';
@@ -61,6 +62,10 @@ else
                             else if(strtoupper($data) == "FORGOTPASS")
                             {
                                 include "view/auth/forgotpassword.php";
+                            }  
+                            else if(strtoupper($data) == "TWOAUTHFACTOR")
+                            {
+                                include "view/auth/2authfactor.front.php";
                             }            
                             else if(strtoupper($data) == "LOGOUT")
                             {

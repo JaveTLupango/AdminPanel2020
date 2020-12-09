@@ -14,9 +14,20 @@
             $login_ret = $c_Auth->fn_Login($conn, $login_username, $login_password);
             if ($login_ret == "success")
             {
-              $_SESSION["username"] = $login_username;
-              echo '<button type="button" class="col-12 btn btn-success" style="margin-bottom: 15px;">Sucess</button><br>';
-              header("Location: ".$url."/home");
+              $s_2authF = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "2authfactor", $_SESSION['username']);
+              if($s_2authF === "0")
+              {
+                $_SESSION["username"] = $login_username;
+                echo '<button type="button" class="col-12 btn btn-success" style="margin-bottom: 15px;">Sucess</button><br>';
+                header("Location: ".$url."/home");
+              }              
+              else
+              {
+                $c_Auth->insert_2authfactorlogs($conn, md5($login_username), $login_username);
+                $genCode = $c_Func->GenerateUsername("CODE");
+                $c_Auth->insert_2authfactor_func($conn, md5($login_username), $genCode);
+                header("Location: ".$url."/home/twoauthfactor/".md5($login_username));
+              }
             }
             else
             {

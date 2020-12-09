@@ -24,7 +24,7 @@ class Auth_Controller
 				return "success";
 		     }	
 		     else{
-		     	return "Failed to login " .$count;
+		     	return "Failed to login ";
 		     }  
 		}
 		catch (Exception $e)
@@ -32,4 +32,44 @@ class Auth_Controller
 			return "Failed to login " .$e->getMessage();
 		}
 	}
+
+	function insert_2authfactorlogs($conn,$username, $hash)
+	{
+		try
+		{  			
+			$now = new DateTime();
+			$dt = $now->format('Y-m-d H:i:s');
+			$dt1 = $now->format('m-Y-d H:i:s');
+			$dt2 = $now->format('d-m-Y H:i:s');
+			$dttime = $now->format('Y-m-d H:i:s');
+			$id = round($dt).round($dt1).round($dt2).round(microtime(true));
+
+			$sql = "INSERT INTO 2authfactorlogs (2authID, username, status, dt, hash)
+						   VALUES ('$id', '$username', 'active', '$dttime', $hash)";
+								$conn->exec($sql);
+			return "success";
+		}
+		catch (Exception $e)
+		{			
+			return "Failed to login " .$e->getMessage();
+		}
+	}
+
+	function insert_2authfactor_func($conn,$username, $code)
+	{
+		try
+		{  			
+			$now = new DateTime();
+			$dttime = $now->format('Y-m-d H:i:s');
+			$sql = "INSERT INTO 2authfactor (userid, status, code, dt)
+						   VALUES ('$username', 'active', '$code', '$dttime')";
+								$conn->exec($sql);
+			return "success";
+		}
+		catch (Exception $e)
+		{			
+			return "Failed to login " .$e->getMessage();
+		}
+	}
+
 }
