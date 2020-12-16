@@ -33,11 +33,16 @@
               $val_auth = $c_Select->fn_SingleResponse($conn, "SELECT * FROM 2authfactor WHERE status='active' AND duration > 0 AND userid = ? ORDER BY dt DESC LIMIT 1", "code", $get_data);
               if(trim($_POST["twoauthfact"]) === trim($val_auth))
               {
+                $val_username = $c_Select->fn_SingleResponse($conn, "SELECT * FROM 2authfactor WHERE status='active' AND duration > 0 AND userid = ? ORDER BY dt DESC LIMIT 1", "userid", $get_data);
+                $_SESSION["username"] = $val_username;
                 echo "success - ". $val_auth;
+                $c_Del->deleteRecord($conn, "UPDATE 2authfactorlogs SET status='enactive', try= 0 WHERE username='$get_data'");
+                $c_Del->deleteRecord($conn, "UPDATE 2authfactor SET status='enactive', WHERE userid='$get_data'");
+                header("Location: ".$url."/home");
               }
               else
               {                
-                echo "Error Code";
+                echo "<center><b>Error Code Validation</b><center>";
               }
               //echo $_POST["twoauthfact"];
             }
