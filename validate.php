@@ -7,7 +7,9 @@ include 'controller/AuthController.php'; // Auth Controller
 require 'controller/SelectController.php'; // Select Controller
 require 'controller/FuncController.php'; // Function Controller
 require 'controller/EmailController.php'; // Function Controller
+require 'controller/DeleteController.php'; // Function Controller
 
+$c_Del = new Delete_Controller(); // Delete controller declarati0n
 $c_con = new ClassConnection(); // connection declaration
 $c_InsertControl = new Insert_Controller(); // Insertion controller declaration
 $c_Auth = new Auth_Controller(); // Auth controller Decleration

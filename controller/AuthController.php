@@ -44,8 +44,8 @@ class Auth_Controller
 			$dttime = $now->format('Y-m-d H:i:s');
 			$id = round($dt).round($dt1).round($dt2).round(microtime(true));
 
-			$sql = "INSERT INTO 2authfactorlogs (2authID, username, status, dt, hash)
-						   VALUES ('$id', '$username', 'active', '$dttime', $hash)";
+			$sql = "INSERT INTO 2authfactorlogs (2authID, username, status, dt, hash, try, duration)
+						   VALUES ('$id', '$username', 'active', '$dttime', '$hash', 5, 900)";
 								$conn->exec($sql);
 			return "success";
 		}
