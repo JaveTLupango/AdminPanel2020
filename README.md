@@ -19,5 +19,3 @@ send email for forgot password,
 send email for Two Factor Authentication verification and validation
 
 can set user on/off Two Factor Authentication.
-
-
