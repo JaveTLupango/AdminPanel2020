@@ -14,7 +14,6 @@ class delete_Controller
 		}catch(Exception $err)
 		{
 			return $err;
-		}
-		  
+		}		  
 	}
 }
