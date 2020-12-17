@@ -1,45 +1,46 @@
 <?php
 $SelectQuery = "";
+
+$upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "userid", $_SESSION['username']);
     if (strtoupper($data) == "VIEWALLUSER")
     { 
-      if ($c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "usertype", $_SESSION['username']) == "admin")
-      {
-        $SelectQuery = "SELECT * FROM users WHERE status != 'delete' AND username != '".$_SESSION['username']."' ORDER BY  dtjoin DESC";
-      }
-      else
-      {
-        $upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "userid", $_SESSION['username']);
-        $SelectQuery = "SELECT * FROM users WHERE status != 'delete' AND upline ='$upline_res'  ORDER BY  dtjoin DESC";
-      }
+        $SelectQuery = "SELECT * FROM users WHERE status != 'delete' AND username != '".$_SESSION['username']."' ORDER BY  dtjoin DESC";      
+    }
+    else if (strtoupper($data) == "VIEWCLIENT")
+    {
+         $SelectQuery = "SELECT * FROM users WHERE status != 'delete' AND  upline ='$upline_res'  ORDER BY  dtjoin DESC";      
     }
     else if (strtoupper($data) == "VIEWRESELLER")
     {
-      if ($c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "usertype", $_SESSION['username']) == "admin")
+      if ($aside_access == "admin")
       {
          $SelectQuery = "SELECT * FROM users WHERE status != 'delete' AND usertype = 'reseller'  ORDER BY  dtjoin DESC";
       }
       else
       {
-        $upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "userid", $_SESSION['username']);
          $SelectQuery = "SELECT * FROM users WHERE status != 'delete' AND usertype = 'reseller' AND  upline ='$upline_res'  ORDER BY  dtjoin DESC";
       }
     }
     else if (strtoupper($data) == "VIEWBLOCKUSER")
     {
-       if ($c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "usertype", $_SESSION['username']) == "admin")
+       if ($aside_access == "admin")
       {
          $SelectQuery = "SELECT * FROM users WHERE status = 'block'  ORDER BY  dtjoin DESC ";
       }
       else
       {
-         $upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "userid", $_SESSION['username']);
          $SelectQuery = "SELECT * FROM users WHERE status = 'block' AND  upline ='$upline_res'  ORDER BY  dtjoin DESC ";
       }
       //$SelectQuery = "SELECT * FROM users WHERE usertype = 'block'";
     }
     else if (strtoupper($data) == "VIEWACTIVEUSER")
     {
-        if ($c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "usertype", $_SESSION['username']) == "admin")
+         $SelectQuery = "SELECT * FROM users WHERE status = 'active'  ORDER BY  dtjoin DESC";      
+      //$SelectQuery = "SELECT * FROM users WHERE status = 'active'";
+    }
+    else if (strtoupper($data) == "HISTORY")
+    {
+      if ($aside_access == "admin")
       {
          $SelectQuery = "SELECT * FROM users WHERE status = 'active'  ORDER BY  dtjoin DESC";
       }
@@ -48,14 +49,11 @@ $SelectQuery = "";
          $upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "userid", $_SESSION['username']);
          $SelectQuery = "SELECT * FROM users WHERE status = 'active' AND  upline ='$upline_res'  ORDER BY   dtjoin DESC";
       }
-      //$SelectQuery = "SELECT * FROM users WHERE status = 'active'";
-    }
-    else if (strtoupper($data) == "HISTORY")
-    {
-      $upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "id", $_SESSION['username']);
-      $SelectQuery = "SELECT (SELECT username From users WHERE users.id = creditlogs.userid) as userid,
-                      (SELECT username From users WHERE users.id = creditlogs.ap_id) as ap_id, 
-                      credit ,type, duration, dt FROM creditlogs WHERE userid = '$upline_res'  ORDER BY dt DESC";
+
+      //$upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "id", $_SESSION['username']);
+      //$SelectQuery = "SELECT (SELECT username From users WHERE users.id = creditlogs.userid) as userid,
+                   //   (SELECT username From users WHERE users.id = creditlogs.ap_id) as ap_id, 
+                   //   credit ,type, duration, dt FROM creditlogs WHERE userid = '$upline_res'  ORDER BY dt DESC";
     }
     $s_res = $c_Select->fn_SelectAll($conn, $SelectQuery);    
 ?>
@@ -93,24 +91,48 @@ $SelectQuery = "";
                               <td>'. $c_Func->_duration($row['duration']).'</td>
                               <td>'.$row['usertype'].'</td>
                               <td>';
-                          if($aside_access === "client")
-                          {
-                            echo '<button type="button" name="" class="btn btn-danger">No Access</button>';
-                          }
-                          else{
-                                echo '<button onclick="user_edit_function('.$row['id'].')" class="btn btn-success" title="Update Client Info"><i class="fa fa-edit"></i></button>
-                                      <button onclick="modalClientInformationView('.$row['id'].')" class="btn btn-info"  title="View Client Info"><i class="fa fa-file"></i></button>
-                                      <button onclick="functionDeleteUsers('.$row['id'].')"  class="btn btn-danger"  title="Delete Client Info"><i class="fa fa-trash"></i></button>';
-                                  if ($row['usertype'] == "reseller")
-                                  {
-                                    echo'<button onclick="functionReloadVoucher('.$row['id'].')" class="btn btn-warning"><i class="fa fa-share" title="Reload Client Credit"></i></button>';
-                                    echo'<button onclick="functionReloadDuration('.$row['id'].')" class="btn btn-success"><i class="fa fa-barcode" title="Reload Client Duration"></i></button>';
-                                  }
-                                  else
-                                  {
-                                    echo'<button onclick="functionReloadDuration('.$row['id'].')" class="btn btn-success"><i class="fa fa-barcode" title="Reload Client Duration"></i></button>';
-                                  }
-                          }  
+                         if(strtoupper($data) === "VIEWALLUSER" || strtoupper($data) === "VIEWACTIVEUSER")
+                         {
+                            if($aside_access != "admin")
+                            {
+                              echo '<button type="button" name="" class="btn btn-danger">No Access</button>';
+                            }
+                            else{
+                                  echo '<button onclick="user_edit_function('.$row['id'].')" class="btn btn-success" title="Update Client Info"><i class="fa fa-edit"></i></button>
+                                        <button onclick="modalClientInformationView('.$row['id'].')" class="btn btn-info"  title="View Client Info"><i class="fa fa-file"></i></button>
+                                        <button onclick="functionDeleteUsers('.$row['id'].')"  class="btn btn-danger"  title="Delete Client Info"><i class="fa fa-trash"></i></button>';
+                                    if ($row['usertype'] == "reseller")
+                                    {
+                                      echo'<button onclick="functionReloadVoucher('.$row['id'].')" class="btn btn-warning"><i class="fa fa-share" title="Reload Client Credit"></i></button>';
+                                      echo'<button onclick="functionReloadDuration('.$row['id'].')" class="btn btn-success"><i class="fa fa-barcode" title="Reload Client Duration"></i></button>';
+                                    }
+                                    else
+                                    {
+                                      echo'<button onclick="functionReloadDuration('.$row['id'].')" class="btn btn-success"><i class="fa fa-barcode" title="Reload Client Duration"></i></button>';
+                                    }
+                            }
+                         }
+                         else{
+                            if($aside_access === "client")
+                            {
+                              echo '<button type="button" name="" class="btn btn-danger">No Access</button>';
+                            }
+                            else{
+                                  echo '<button onclick="user_edit_function('.$row['id'].')" class="btn btn-success" title="Update Client Info"><i class="fa fa-edit"></i></button>
+                                        <button onclick="modalClientInformationView('.$row['id'].')" class="btn btn-info"  title="View Client Info"><i class="fa fa-file"></i></button>
+                                        <button onclick="functionDeleteUsers('.$row['id'].')"  class="btn btn-danger"  title="Delete Client Info"><i class="fa fa-trash"></i></button>';
+                                    if ($row['usertype'] == "reseller")
+                                    {
+                                      echo'<button onclick="functionReloadVoucher('.$row['id'].')" class="btn btn-warning"><i class="fa fa-share" title="Reload Client Credit"></i></button>';
+                                      echo'<button onclick="functionReloadDuration('.$row['id'].')" class="btn btn-success"><i class="fa fa-barcode" title="Reload Client Duration"></i></button>';
+                                    }
+                                    else
+                                    {
+                                      echo'<button onclick="functionReloadDuration('.$row['id'].')" class="btn btn-success"><i class="fa fa-barcode" title="Reload Client Duration"></i></button>';
+                                    }
+                            }
+                         }
+                            
                         echo '</td> </tr>';
                         $countb++;
                     }             //functionReloadVoucher 

@@ -86,7 +86,15 @@
                   </p>
                 </a>
               </li>  
-    
+              <li class="nav-item">
+                <a href="'.$url.'/home/viewclient" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    View total client
+                  </p>
+                </a>
+              </li>    
+
               <li class="nav-item">
                 <a href="'.$url.'/home/addbulkuser" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>

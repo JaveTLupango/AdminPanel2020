@@ -152,7 +152,8 @@ else
                     strtoupper($data) == "VIEWALLUSER" || 
                     strtoupper($data) == "VIEWRESELLER" || 
                     strtoupper($data) == "VIEWBLOCKUSER"|| 
-                    strtoupper($data) == "VIEWACTIVEUSER")
+                    strtoupper($data) == "VIEWACTIVEUSER" || 
+                    strtoupper($data) == "VIEWCLIENT") //VIEWCLIENT
             {
                 if (isset($_SESSION["username"]))
                 {
@@ -201,6 +202,14 @@ else
                             else if(strtoupper($data) == "VIEWACTIVEUSER")
                             {
                                 $tableLogs = "View All Active User";
+                                $Dashboard_100 = strtoupper($data);
+                                include 'view/partial/admin.dashboard.php'; //viewuser.dashboard.php
+                                include 'view/body/viewuser.body.php';     
+                                //print "home/about";
+                            }
+                            else if(strtoupper($data) == "VIEWCLIENT")
+                            {
+                                $tableLogs = "View All Client";
                                 $Dashboard_100 = strtoupper($data);
                                 include 'view/partial/admin.dashboard.php'; //viewuser.dashboard.php
                                 include 'view/body/viewuser.body.php';     
