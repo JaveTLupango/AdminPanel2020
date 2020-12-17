@@ -40,17 +40,17 @@ $upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE use
     }
     else if (strtoupper($data) == "HISTORY")
     {
-      if ($aside_access == "admin")
-      {
-         $SelectQuery = "SELECT * FROM users WHERE status = 'active'  ORDER BY  dtjoin DESC";
-      }
-      else
-      {
+      //if ($aside_access == "admin")
+     // {
+    //     $SelectQuery = "SELECT * FROM users WHERE status = 'active'  ORDER BY  dtjoin DESC";
+     // }
+    //  else
+     // {
         // $upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "userid", $_SESSION['username']);
-         $SelectQuery = "SELECT * FROM users WHERE status = 'active' AND  upline ='$upline_res'  ORDER BY   dtjoin DESC";
-      }
+     //    $SelectQuery = "SELECT * FROM users WHERE status = 'active' AND  upline ='$upline_res'  ORDER BY   dtjoin DESC";
+     // }
 
-      //$upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "id", $_SESSION['username']);
+      $upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "id", $_SESSION['username']);
       $SelectQuery = "SELECT (SELECT username From users WHERE users.id = creditlogs.userid) as userid,
                       (SELECT username From users WHERE users.id = creditlogs.ap_id) as ap_id, 
                       credit ,type, duration, dt FROM creditlogs WHERE userid = '$upline_res'  ORDER BY dt DESC";
