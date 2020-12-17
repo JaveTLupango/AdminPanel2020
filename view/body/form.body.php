@@ -89,7 +89,95 @@
       </div>            
       <!-- /.card -->
     </div>
-<?php } else if (strtoupper($data) == "ADDBULKUSER") {
+<?php }
+ else if (strtoupper($data) == "SETTING"){ ?>
+
+<div class="col-md-8" style=" margin: auto;
+  width: 80%;">
+            <!-- general form elements -->      
+  <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Update Username</h3>
+      </div>
+      <form role="form" method="POST">
+        <div class="card-body">
+        <div class="form-group">
+              <label for="exampleInputEmail1">UserName</label>
+              <input type="text" class="form-control" name="usernameOR" id="exampleInputEmail1" value="<?php echo $_SESSION["username"];//$AddQ_name; ?>" required placeholder="Enter name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" name="update_username" id="exampleInputEmail1" value="" required placeholder="Enter email">
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" name="btnupdate_username" class="btn btn-primary">Update</button>
+        </div>
+      </form> 
+  </div>            
+      <!-- /.card -->
+</div>
+
+<div class="col-md-8" style=" margin: auto;
+  width: 80%;">
+            <!-- general form elements -->      
+  <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Update Two Factor Authentication</h3>
+      </div>
+      <form role="form" method="POST">
+        <div class="card-body">
+        <div class="form-group">
+              <label for="exampleInputEmail1">UserName</label>
+              <input type="text" class="form-control" name="usernameOR" id="exampleInputEmail1" value="<?php echo $_SESSION["username"];//$AddQ_name; ?>" required placeholder="Enter name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Enable (Yes or No)</label>
+                <select name="Add_Option" id="Add_Option" class="form-control" >
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+                </select>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" name="btnupdate_2factAuth" class="btn btn-primary">Update</button>
+        </div>
+      </form> 
+  </div>            
+      <!-- /.card -->
+</div>
+
+<div class="col-md-8" style=" margin: auto;
+  width: 80%;">
+            <!-- general form elements -->      
+  <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Update Password</h3>
+      </div>
+      <form role="form" method="POST">
+        <div class="card-body">
+        <div class="form-group">
+              <label for="exampleInputEmail1">UserName</label>
+              <input type="text" class="form-control" name="usernameOR" id="exampleInputEmail1" value="<?php echo $_SESSION["username"];//$AddQ_name; ?>" required placeholder="Enter name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" name="AddQ_password" id="exampleInputPassword1" value="" required placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Confirm Password</label>
+              <input type="password" class="form-control" name="AddQ_passwordNew" id="exampleInputPassword1" value="" required placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" name="btnupdate_2factAuth" class="btn btn-primary">Update</button>
+        </div>
+      </form> 
+  </div>            
+      <!-- /.card -->
+</div>
+<?php }
+ else if (strtoupper($data) == "ADDBULKUSER") {
 ?>
         <div class="col-md-8" style=" margin: auto;
           width: 80%;">

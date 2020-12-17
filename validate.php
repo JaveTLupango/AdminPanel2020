@@ -86,7 +86,8 @@ else
                     strtoupper($data) == "RESETPASSWORD" || 
                     strtoupper($data) == "ADDNEWRESELLER" || 
                     strtoupper($data) == "ADDQUICKUSER"|| 
-                    strtoupper($data) == "ADDBULKUSER")
+                    strtoupper($data) == "ADDBULKUSER" ||
+                    strtoupper($data) == "SETTING")
             {
                  if (isset($_SESSION["username"]))
                 {
@@ -114,6 +115,12 @@ else
                                 include 'view/body/form.body.php';                                
                             }  
                             else if(strtoupper($data) == "ADDBULKUSER") //addquickuser
+                            {                              
+                                $Dashboard_100 = strtoupper($data);
+                                include 'view/partial/admin.dashboard.php';
+                                include 'view/body/form.body.php';                                
+                            } 
+                            else if(strtoupper($data) == "SETTING") //addquickuser
                             {                              
                                 $Dashboard_100 = strtoupper($data);
                                 include 'view/partial/admin.dashboard.php';

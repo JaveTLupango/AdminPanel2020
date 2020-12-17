@@ -13,8 +13,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->    
-
+               with font-awesome or any other icon font library --> 
           <?php
               $aside_access = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "usertype", $_SESSION["username"]);
               if($aside_access == "client")
@@ -134,7 +133,7 @@
               </li>          
     
               <li class="nav-item">
-                <a href="<?php echo($url) ?>/home/setting" class="nav-link">
+                <a href="'.$url.'/home/setting" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     Setting
