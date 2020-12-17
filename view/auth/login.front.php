@@ -14,7 +14,7 @@
             $login_ret = $c_Auth->fn_Login($conn, $login_username, $login_password);
             if ($login_ret == "success")
             {
-              $s_2authF = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "2authfactor", $_SESSION['username']);
+              $s_2authF = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "2authfactor", $login_username);
               if($s_2authF === "0")
               {
                 $_SESSION["username"] = $login_username;
