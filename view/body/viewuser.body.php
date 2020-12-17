@@ -1,6 +1,5 @@
 <?php
 $SelectQuery = "";
-
     if (strtoupper($data) == "VIEWALLUSER")
     { 
       if ($c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "usertype", $_SESSION['username']) == "admin")
@@ -93,19 +92,25 @@ $SelectQuery = "";
                               <td>'.$row['username'].'</td>
                               <td>'. $c_Func->_duration($row['duration']).'</td>
                               <td>'.$row['usertype'].'</td>
-                              <td>
-                                <button onclick="user_edit_function('.$row['id'].')" class="btn btn-success" title="Update Client Info"><i class="fa fa-edit"></i></button>
-                                <button onclick="modalClientInformationView('.$row['id'].')" class="btn btn-info"  title="View Client Info"><i class="fa fa-file"></i></button>
-                                <button onclick="functionDeleteUsers('.$row['id'].')"  class="btn btn-danger"  title="Delete Client Info"><i class="fa fa-trash"></i></button>';
-                            if ($row['usertype'] == "reseller")
-                            {
-                               echo'<button onclick="functionReloadVoucher('.$row['id'].')" class="btn btn-warning"><i class="fa fa-share" title="Reload Client Credit"></i></button>';
-                               echo'<button onclick="functionReloadDuration('.$row['id'].')" class="btn btn-success"><i class="fa fa-barcode" title="Reload Client Duration"></i></button>';
-                            }
-                            else
-                            {
-                              echo'<button onclick="functionReloadDuration('.$row['id'].')" class="btn btn-success"><i class="fa fa-barcode" title="Reload Client Duration"></i></button>';
-                            }
+                              <td>';
+                          if($aside_access === "client")
+                          {
+                            echo '<button type="button" name="" class="btn btn-danger">No Access</button>';
+                          }
+                          else{
+                                echo '<button onclick="user_edit_function('.$row['id'].')" class="btn btn-success" title="Update Client Info"><i class="fa fa-edit"></i></button>
+                                      <button onclick="modalClientInformationView('.$row['id'].')" class="btn btn-info"  title="View Client Info"><i class="fa fa-file"></i></button>
+                                      <button onclick="functionDeleteUsers('.$row['id'].')"  class="btn btn-danger"  title="Delete Client Info"><i class="fa fa-trash"></i></button>';
+                                  if ($row['usertype'] == "reseller")
+                                  {
+                                    echo'<button onclick="functionReloadVoucher('.$row['id'].')" class="btn btn-warning"><i class="fa fa-share" title="Reload Client Credit"></i></button>';
+                                    echo'<button onclick="functionReloadDuration('.$row['id'].')" class="btn btn-success"><i class="fa fa-barcode" title="Reload Client Duration"></i></button>';
+                                  }
+                                  else
+                                  {
+                                    echo'<button onclick="functionReloadDuration('.$row['id'].')" class="btn btn-success"><i class="fa fa-barcode" title="Reload Client Duration"></i></button>';
+                                  }
+                          }  
                         echo '</td> </tr>';
                         $countb++;
                     }             //functionReloadVoucher 

@@ -208,17 +208,42 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" name="AddQ_password" id="exampleInputPassword1" value="" required placeholder="Password">
+              <input type="password" class="form-control" name="Update_password" id="exampleInputPassword1" value="" required placeholder="Password">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Confirm Password</label>
-              <input type="password" class="form-control" name="AddQ_passwordNew" id="exampleInputPassword1" value="" required placeholder="Confirm Password">
+              <input type="password" class="form-control" name="Update_passwordNew" id="exampleInputPassword1" value="" required placeholder="Confirm Password">
             </div>
         </div>
         <div class="card-footer">
-            <button type="submit" name="btnupdate_2factAuth" class="btn btn-primary">Update</button>
+            <button type="submit" name="btnupdate_password" class="btn btn-primary">Update</button>
+            <?php 
+          if(isset($_POST["btnupdate_password"]))
+          {
+            $usernameOR = $_POST["usernameOR"];
+            $Update_password = $_POST["Update_password"];
+            $Update_passwordNew = $_POST["Update_passwordNew"];
+            if($Update_password === $Update_passwordNew)
+            {
+              $hashUpdate_password= md5($Update_password);
+              $retUpdateusername = $c_Del->deleteRecord($conn, "UPDATE users SET password='$hashUpdate_password', passkey='$Update_password' WHERE username='$usernameOR'");
+              if($retUpdateusername === "success")
+              {
+                echo '<button type="button" name="" class="btn btn-success" style="float: right;" >Successfully Updated!</button>';
+              }
+              else
+              {              
+                 echo '<button type="button" name="" class="btn btn-danger" style="float: right;" >Unsuccessfully Updated!</button>';
+              }
+            }
+            else
+            {
+              echo '<button type="button" name="" class="btn btn-danger" style="float: right;" >Password not match!</button>';
+            }            
+          }
+      ?>
         </div>
-      </form> 
+      </form>
   </div>            
       <!-- /.card -->
 </div>
