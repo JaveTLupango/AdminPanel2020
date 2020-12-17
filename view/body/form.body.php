@@ -106,8 +106,8 @@
               <input type="text" class="form-control" name="usernameOR" id="exampleInputEmail1" value="<?php echo $_SESSION["username"];//$AddQ_name; ?>" required placeholder="Enter name">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" name="update_username" id="exampleInputEmail1" value="" required placeholder="Enter email">
+              <label for="exampleInputEmail1">New Username</label>
+              <input type="email" class="form-control" name="update_username" id="exampleInputEmail1" value="" required placeholder="Enter New Username">
             </div>
         </div>
         <div class="card-footer">
