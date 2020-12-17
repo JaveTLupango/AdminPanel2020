@@ -7,7 +7,14 @@ class delete_Controller
 {	
 	function deleteRecord($conn, $sql)
 	{
-		  $conn->exec($sql);
-		  return "success";
+		try
+		{
+			$conn->exec($sql);
+			return "success";
+		}catch(Exception $err)
+		{
+			return $err;
+		}
+		  
 	}
 }

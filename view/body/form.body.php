@@ -100,6 +100,7 @@
         <h3 class="card-title">Update Username</h3>
       </div>
       <form role="form" method="POST">
+      
         <div class="card-body">
         <div class="form-group">
               <label for="exampleInputEmail1">UserName</label>
@@ -107,11 +108,29 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">New Username</label>
-              <input type="email" class="form-control" name="update_username" id="exampleInputEmail1" value="" required placeholder="Enter New Username">
+              <input type="text" class="form-control" name="update_username" id="exampleInputEmail1" value="" required placeholder="Enter New Username">
             </div>
         </div>
         <div class="card-footer">
             <button type="submit" name="btnupdate_username" class="btn btn-primary">Update</button>
+            <?php 
+          if(isset($_POST["btnupdate_username"]))
+          {
+            $usernameOR = $_POST["usernameOR"];
+            $update_username = $_POST["update_username"];
+            $retUpdateusername = $c_Del->deleteRecord($conn, "UPDATE users SET username='$update_username' WHERE username='$usernameOR'");
+            if($retUpdateusername === "success")
+            {
+              $_SESSION["username"] = $update_username;
+              echo '<button type="button" name="" class="btn btn-success" style="float: right;" >Successfully Updated!</button>';
+            }
+            else
+            {              
+               echo '<button type="button" name="" class="btn btn-danger" style="float: right;" >Unsuccessfully Updated!</button>';
+            }
+          }
+      ?>
+            
         </div>
       </form> 
   </div>            
@@ -133,7 +152,18 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Enable (Yes or No)</label>
-                <select name="Add_Option" id="Add_Option" class="form-control" >
+                <select name="Update2Authfact" id="Add_Option" class="form-control" >
+                <?php 
+                $res_Update2Authfact = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "2authfactor", $_SESSION['username']);
+                if($res_Update2Authfact === "0")
+                {
+                  echo '<option value="0">No</option>';
+                }
+                else
+                {
+                  echo '<option value="1">Yes</option>';
+                }                  
+                ?>
                   <option value="1">Yes</option>
                   <option value="0">No</option>
                 </select>
@@ -141,6 +171,22 @@
         </div>
         <div class="card-footer">
             <button type="submit" name="btnupdate_2factAuth" class="btn btn-primary">Update</button>
+            <?php 
+          if(isset($_POST["btnupdate_2factAuth"]))
+          {
+            $usernameOR = $_POST["usernameOR"];
+            $Update2Authfact = $_POST["Update2Authfact"];
+            $retUpdateusername = $c_Del->deleteRecord($conn, "UPDATE users SET 2authfactor='$Update2Authfact' WHERE username='$usernameOR'");
+            if($retUpdateusername === "success")
+            {
+              echo '<button type="button" name="" class="btn btn-success" style="float: right;" >Successfully Updated!</button>';
+            }
+            else
+            {              
+               echo '<button type="button" name="" class="btn btn-danger" style="float: right;" >Unsuccessfully Updated!</button>';
+            }
+          }
+      ?>
         </div>
       </form> 
   </div>            
