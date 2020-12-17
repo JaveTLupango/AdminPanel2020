@@ -46,14 +46,14 @@ $upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE use
       }
       else
       {
-         $upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "userid", $_SESSION['username']);
+        // $upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "userid", $_SESSION['username']);
          $SelectQuery = "SELECT * FROM users WHERE status = 'active' AND  upline ='$upline_res'  ORDER BY   dtjoin DESC";
       }
 
       //$upline_res = $c_Select->fn_SingleResponse($conn, "SELECT * FROM users WHERE username=?", "id", $_SESSION['username']);
-      //$SelectQuery = "SELECT (SELECT username From users WHERE users.id = creditlogs.userid) as userid,
-                   //   (SELECT username From users WHERE users.id = creditlogs.ap_id) as ap_id, 
-                   //   credit ,type, duration, dt FROM creditlogs WHERE userid = '$upline_res'  ORDER BY dt DESC";
+      $SelectQuery = "SELECT (SELECT username From users WHERE users.id = creditlogs.userid) as userid,
+                      (SELECT username From users WHERE users.id = creditlogs.ap_id) as ap_id, 
+                      credit ,type, duration, dt FROM creditlogs WHERE userid = '$upline_res'  ORDER BY dt DESC";
     }
     $s_res = $c_Select->fn_SelectAll($conn, $SelectQuery);    
 ?>
