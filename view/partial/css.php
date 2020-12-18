@@ -3,7 +3,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="<?php echo($url) ?>/assets/f/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo($url) ?>/assets/f/css/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo($url) ?>/assets/f/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
