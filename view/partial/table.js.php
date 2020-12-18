@@ -7,9 +7,9 @@
 <script src="<?php echo($url) ?>/assets/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="<?php echo($url) ?>/assets/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
-<script src="<?php echo($url) ?>/assets/dist/js/adminlte.min.js"></script>
+<script src="<?php echo($url) ?>/assets/f/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?php echo($url) ?>/assets/dist/js/demo.js"></script>
+<script src="<?php echo($url) ?>/assets/f/js/demo.js"></script>
 <!-- page script -->
 <script>
   $(function () {
