@@ -11,7 +11,7 @@
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="<?php echo$url?>/assets/f/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="<?php echo$url?>/assets/f/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo$url?>/assets/f/css/icheck-bootstrap.min.css">
   <!-- JQVMap -->
   <link rel="stylesheet" href="<?php echo$url?>/assets/f/css/jqvmap.min.css">
   <!-- Theme style -->
@@ -23,6 +23,6 @@
   <!-- summernote -->
   <link rel="stylesheet" href="<?php echo$url?>/assets/f/css/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
