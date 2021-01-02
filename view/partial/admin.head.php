@@ -25,4 +25,6 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  
+<script data-ad-client="ca-pub-5125544300826919" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>

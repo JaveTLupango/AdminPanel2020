@@ -16,4 +16,6 @@
   <link rel="stylesheet" href="<?php echo$url?>/assets/f/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+<script data-ad-client="ca-pub-5125544300826919" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>

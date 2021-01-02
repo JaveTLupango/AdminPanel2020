@@ -9,3 +9,5 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  
+<script data-ad-client="ca-pub-5125544300826919" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
