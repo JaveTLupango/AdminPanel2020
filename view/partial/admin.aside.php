@@ -121,7 +121,7 @@
                   </p>
                 </a>
               </li>  
-    
+    <!--
               <li class="nav-item">
                 <a href'.$url.'/home/viewblockuser" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
@@ -129,7 +129,7 @@
                     View Block users
                   </p>
                 </a>
-              </li>  
+              </li>  -->
     
               <li class="nav-item">
                 <a href="'.$url.'/home/viewreseller" class="nav-link">
@@ -159,7 +159,6 @@
               </li>    
                 ';
               }
-
           ?>
 
         </ul>
