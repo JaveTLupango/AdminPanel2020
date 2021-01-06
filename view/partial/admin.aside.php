@@ -2,7 +2,7 @@
  
     <!-- Brand Logo -->
     <a href="<?php echo($url) ?>/home/home" class="brand-link">
-      <img src="<?php echo$url?>/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="https://raw.githubusercontent.com/PanggaJave/aa/f1d7a8769960fc98d48be89147c9139a68923d16/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">AdminPanel</span>
     </a>
